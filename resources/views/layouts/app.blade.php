@@ -37,7 +37,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    
+                    @include('includes.navbar')
                 </div>
             </div>
         </nav>
