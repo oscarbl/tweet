@@ -15,12 +15,13 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
-            $table->string(column: 'title');
-            $table->text(column: 'content');
+            $table->string('title');
+
+            $table->text('content');
             //Author
                 //Definimos Clave foranea
-            $table->unsignedBigInteger(column: 'user_id');
-            $table->foreign( columns: 'user_id')->references(columns: 'id')->on( table: 'users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();
         }
