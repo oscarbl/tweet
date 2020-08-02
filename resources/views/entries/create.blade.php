@@ -14,14 +14,14 @@
                         </div>
                     @endif
 
-                    <form action="{{route('storage')}}" method="post">
+                    <form action="{{route('store')}}" method="post">
                         @csrf
 
                         <div class="form-group ">
                             <label for="title" >Title</label>
 
                             <div class="">
-                                <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="Title">
+                                <input id="title" type="title" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required>
                                 @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
                             </div>
                             <label for="title"> Content</label>
                             <div class="">
-                                <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" required">
+                                <textarea id="content" class="form-control @error('content') is-invalid @enderror" name="content" required>
                                     {{old('content') }}
                                 </textarea>
                                 @error('content')
