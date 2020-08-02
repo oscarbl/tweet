@@ -29,4 +29,5 @@ class GuestController extends Controller
         //Devolvemos una vista con las entradas recibidas
         return view('entries.show', compact('entry'));
     }
+
 }
