@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entry;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class GuestController extends Controller
 {
@@ -12,7 +13,16 @@ class GuestController extends Controller
     {
         //dd('GuestController');
         //Ingreso todas las entradas a la variable entries
-        $entries = Entry::All();
-         return view('welcome');
+        //$entries = Entry::All();
+        //Paginamos las entradas de 10 en 10
+        $entries = Entry::with('user')
+        ->orderByDesc('created_at')
+        ->orderByDesc('id')
+
+        ->paginate();
+
+        //Retorno a la vista welcomoe y le paso la variable entries
+
+         return view('welcome',compact('entries'));
     }
 }

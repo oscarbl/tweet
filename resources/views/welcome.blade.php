@@ -5,14 +5,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Last Entries</div>
-
-                <div class="card-body">
-                    @foreach ($entries as $entriy)
-                        <p>{{ $entry->title }}</p>
-                        <p>{{ $entry->content }}</p>
+                <div class="card-header mb-4">Last Entries</div>
+                    
+                    @foreach ($entries as $entry)
+                        <div class="card mb-4">
+                            <div class="card-header"><p>{{$entry->id}}. {{ $entry->title }}</p></div>
+                            <div class="card-body"><p>{{ $entry->content }}</p></div>
+                            <div class="card-footer">
+                                Author:
+                            <a href="{{ url('users/'.$entry->user_id)}}" class="href">
+                                    {{ $entry->user->name }}
+                                </a>
+                            </div>
+                        </div>
                     @endforeach
-                </div>
+                    {{ $entries->links() }}
             </div>
         </div>
     </div>
