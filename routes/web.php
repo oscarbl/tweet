@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/entries/create', 'EntryController@create')->name('new_entry');
 Route::post('/entries', 'EntryController@store')->name('store');
+Route::get('/entries/{entry}', 'GuestController@show');

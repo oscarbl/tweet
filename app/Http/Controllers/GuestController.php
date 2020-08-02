@@ -18,11 +18,15 @@ class GuestController extends Controller
         $entries = Entry::with('user')
         ->orderByDesc('created_at')
         ->orderByDesc('id')
-
         ->paginate();
 
         //Retorno a la vista welcomoe y le paso la variable entries
-
          return view('welcome',compact('entries'));
+    }
+    
+    public function show(Entry $entry)
+    {
+        //Devolvemos una vista con las entradas recibidas
+        return view('entries.show', compact('entry'));
     }
 }
