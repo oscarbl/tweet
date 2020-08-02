@@ -13,8 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <p>My Entries</p>
+                    <ul>
+                        @foreach ($entries as $entry)
+                    <li>{{ $entry->title}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

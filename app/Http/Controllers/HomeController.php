@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entry;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //Traemos las entradas del usuario autenticado
+        $entries = Entry::where('user_id', auth()->id())->get();
+        //Enviamos a la pagina la variable entries
+        return view('home', compact('entries'));
     }
 }
