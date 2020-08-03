@@ -25,3 +25,4 @@ Route::put('/entries/{entry}', 'EntryController@update');
 
 Route::get('/entries/{entry}', 'GuestController@show');
 Route::get('/entries/{entry}/edit', 'EntryController@edit');
+Route::get('/users/{user}', 'UserController@show');

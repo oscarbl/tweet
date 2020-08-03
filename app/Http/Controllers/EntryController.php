@@ -49,8 +49,7 @@ class EntryController extends Controller
         return view('entries.edit',compact('entry'));
     }
 
-       public function update( 
-        Request $request, Entry $entry)
+       public function update(Request $request, Entry $entry)
     {
         //dd($request->all());
 
@@ -73,5 +72,4 @@ class EntryController extends Controller
         return back()->with(compact('status'));
 
     }
-
 }
