@@ -20,7 +20,7 @@ class GuestController extends Controller
         ->orderByDesc('id')
         ->paginate();
 
-        //Retorno a la vista welcomoe y le paso la variable entries
+        //Retorno a la vista welcome y le paso la variable entries
          return view('welcome',compact('entries'));
     }
     
